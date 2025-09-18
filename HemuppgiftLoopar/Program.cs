@@ -57,70 +57,84 @@ namespace HemuppgiftLoopar
             }
             //Uppgift 4 - Skriv ett program som skapar en lista med heltal och använder en foreach-loop som skapar en ny lista som bara innehåller de tal som är jämna.
             {
-                static void EvenNumbers()
-                {
-                    List<int> nummer = new List<int>();
-                    List<int> jämnaNummer = new List<int>();
+                //static void EvenNumbers()
+                //{
+                //    List<int> nummer = new List<int>();
+                //    List<int> jämnaNummer = new List<int>();
 
-                    //Skapar en lista med tal 0-100
-                    for (int i = 0; i <= 100; i++)
-                    {
-                        nummer.Add(i);
-                    }
-                    //Kollar igenom listan och lägger till jämna tal i en ny lista
-                    foreach (int num in nummer)
-                    {
-                        if (num % 2 == 0)
-                        {
-                            jämnaNummer.Add(num);
-                            Console.WriteLine(num);
-                        }
-                    }
-                }
-                EvenNumbers();
+                //    //Skapar en lista med tal 0-100
+                //    for (int i = 0; i <= 100; i++)
+                //    {
+                //        nummer.Add(i);
+                //    }
+                //    //Kollar igenom listan och lägger till jämna tal i en ny lista
+                //    foreach (int num in nummer)
+                //    {
+                //        if (num % 2 == 0)
+                //        {
+                //            jämnaNummer.Add(num);
+                //            Console.WriteLine(num);
+                //        }
+                //    }
+                //}
+                //EvenNumbers();
             }
             //Uppgift 5
             {
-                //Console.Write("New Password: ");
-                //string userPassword = Console.ReadLine();
-                //string specialCharacters = "!@#$%^&*()-_=+[{]};:’\"|\\,<.>/?";
-                //bool oneSpecial = false;
-                //bool oneUpper = false;
-                //bool eightCharacters = false;
-                //    //Kontrollerar att lösenord är 8 tecken eller mer
-                //    if (userPassword.Length >= 8)
-                //    {
-                //        eightCharacters = true;
-                //    }
-                //    //Kontrollerar innehåll av specialtecken
-                //    for (int i = 0; i < userPassword.Length; i++)
-                //    {
-                //        for (int j = 0;  j < specialCharacters.Length; j++)
-                //        {
-                //            if (userPassword[i] == specialCharacters[j])
-                //            {
-                //                oneSpecial = true;
-                //            }
-                //        }
-                //    }
-                //    //Kontrollerar innehåll av 1 uppercase
-                //    for (int i = 0; i < userPassword.Length; i++)
-                //    {
-                //        if (char.IsUpper(userPassword[i]))
-                //        {
-                //            oneUpper = true;
-                //            break;
-                //        }
-                //    }
-                //    //Kontrollerar så att alla boolean värdena är sanna eller inte.
-                //    if (oneSpecial == true && oneUpper == true && eightCharacters == true)
-                //    {
-                //        Console.WriteLine("Lösenord OK"); //om allt är sant
-                //    }
-                //    else
-                //    {
-                //        Console.WriteLine("Lösenord EJ OK"); // om något är falskt
-                //    }
+                static void PasswordValidator()
+                {
+                    //Ber användaren om lösenord
+                    Console.Write("New Password: ");
+                    string userPassword = Console.ReadLine();
+
+                    // Kontrollerar att lösenord är 8 tecken eller mer
+                    static bool ValidLength(string password)
+                    {
+                        // Kontrollerar att lösenord är 8 tecken eller mer
+                        return password.Length >= 8;
+                    }
+
+                    // Kontrollerar innehåll av minst ett specialtecken
+                    static bool CheckSpecial(string password)
+                    {
+                        string specialCharacters = "!@#$%^&*()-_=+[{]};:'\"|\\,<.>/?";
+                        foreach (char c in password)
+                        {
+                            if (specialCharacters.Contains(c))
+                            {
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+
+                    // Kontrollerar innehåll av minst en versal
+                    static bool CheckVersal(string password)
+                    {
+                        foreach (char c in password)
+                        {
+                            if (char.IsUpper(c))
+                                return true;
+                        }
+                        return false;
+                    }
+
+                    // Anropar alla  metoder för att validera lösenordet
+                    bool eightCharacters = ValidLength(userPassword);
+                    bool oneSpecial = CheckSpecial(userPassword);
+                    bool oneUpper = CheckVersal(userPassword);
+
+                    // Skriver ut resultatet av valideringen
+                    if (eightCharacters && oneSpecial && oneUpper)
+                    {
+                        Console.WriteLine("Lösenord OK");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Lösenord EJ OK");
+                    }
+                }
+                PasswordValidator();
             }
             //Uppgift 6
             {
