@@ -38,41 +38,46 @@ namespace HemuppgiftLoopar
             }
             //Uppgift 3 - Skriv ett program som skapa en lista med siffror och räknar hur många gånger ett specifikt tal förekommer i listan.
             {
-                static void ListCount()
+                //static void ListCount()
+                //{
+                //    List<int> list = new List<int> { 1, 2, 3, 4, 3, 2, 2, 3, 5, 6, 2, 9, 7, 2, 3, 5, 8, 9, 6, 5, 3, 4, 5, 6 };
+                //    Console.WriteLine("Ge mig ett heltal: ");
+                //    int userNum = Convert.ToInt32(Console.ReadLine());
+                //    int count = 0;
+                //    foreach (int num in list)
+                //    {
+                //        if (num == userNum)
+                //        {
+                //            count++;
+                //        }
+                //    }
+                //    Console.WriteLine($"\"{userNum}\" finns {count} gånger i listan.");
+                //}
+                //ListCount();
+            }
+            //Uppgift 4 - Skriv ett program som skapar en lista med heltal och använder en foreach-loop som skapar en ny lista som bara innehåller de tal som är jämna.
+            {
+                static void EvenNumbers()
                 {
-                    List<int> list = new List<int> { 1, 2, 3, 4, 3, 2, 2, 3, 5, 6, 2, 9, 7, 2, 3, 5, 8, 9, 6, 5, 3, 4, 5, 6 };
-                    Console.WriteLine("Ge mig ett heltal: ");
-                    int userNum = Convert.ToInt32(Console.ReadLine());
-                    int count = 0;
-                    foreach (int num in list)
+                    List<int> nummer = new List<int>();
+                    List<int> jämnaNummer = new List<int>();
+
+                    //Skapar en lista med tal 0-100
+                    for (int i = 0; i <= 100; i++)
                     {
-                        if (num == userNum)
+                        nummer.Add(i);
+                    }
+                    //Kollar igenom listan och lägger till jämna tal i en ny lista
+                    foreach (int num in nummer)
+                    {
+                        if (num % 2 == 0)
                         {
-                            count++;
+                            jämnaNummer.Add(num);
+                            Console.WriteLine(num);
                         }
                     }
-                    Console.WriteLine($"\"{userNum}\" finns {count} gånger i listan.");
                 }
-                ListCount();
-            }
-            //Uppgift 4
-            {
-                //List<int> nummer = new List<int>();
-                //List<int> jämnaNummer = new List<int>();
-
-                //for (int i = 0; i <= 100; i++)
-                //{
-                //    nummer.Add(i);
-                //}
-
-                //foreach(int num in nummer)
-                //{
-                //    if (num % 2 == 0)
-                //    {
-                //        jämnaNummer.Add(num);
-                //        Console.WriteLine(num);
-                //    }
-                //}
+                EvenNumbers();
             }
             //Uppgift 5
             {
