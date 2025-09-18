@@ -1,4 +1,6 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HemuppgiftLoopar
 {
@@ -79,76 +81,80 @@ namespace HemuppgiftLoopar
                 //}
                 //EvenNumbers();
             }
-            //Uppgift 5
+            //Uppgift 5 Skriv ett c#-program som ber användaren att ange ett lösenord och kontrollerar om det är giltigt eller ogiltigt. Programmet ska innehålla tre booleska metoder.
             {
-                static void PasswordValidator()
-                {
-                    //Ber användaren om lösenord
-                    Console.Write("New Password: ");
-                    string userPassword = Console.ReadLine();
-
-                    // Kontrollerar att lösenord är 8 tecken eller mer
-                    static bool ValidLength(string password)
-                    {
-                        // Kontrollerar att lösenord är 8 tecken eller mer
-                        return password.Length >= 8;
-                    }
-
-                    // Kontrollerar innehåll av minst ett specialtecken
-                    static bool CheckSpecial(string password)
-                    {
-                        string specialCharacters = "!@#$%^&*()-_=+[{]};:'\"|\\,<.>/?";
-                        foreach (char c in password)
-                        {
-                            if (specialCharacters.Contains(c))
-                            {
-                                return true;
-                            }
-                        }
-                        return false;
-                    }
-
-                    // Kontrollerar innehåll av minst en versal
-                    static bool CheckVersal(string password)
-                    {
-                        foreach (char c in password)
-                        {
-                            if (char.IsUpper(c))
-                                return true;
-                        }
-                        return false;
-                    }
-
-                    // Anropar alla  metoder för att validera lösenordet
-                    bool eightCharacters = ValidLength(userPassword);
-                    bool oneSpecial = CheckSpecial(userPassword);
-                    bool oneUpper = CheckVersal(userPassword);
-
-                    // Skriver ut resultatet av valideringen
-                    if (eightCharacters && oneSpecial && oneUpper)
-                    {
-                        Console.WriteLine("Lösenord OK");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Lösenord EJ OK");
-                    }
-                }
-                PasswordValidator();
-            }
-            //Uppgift 6
-            {
-                //int[] massaTal = { 1, 5, 48, 5, 3, 6, 9, 3, 25, 4, 85, 28, 8 };
-                //int max = 0;
-
-                //for (int i = 0; i < massaTal.Length; i++)
+                //static void PasswordValidator()
                 //{
-                //    if (massaTal[i] > max)
+                //    //Ber användaren om lösenord
+                //    Console.Write("New Password: ");
+                //    string userPassword = Console.ReadLine();
+
+                //    // Kontrollerar att lösenord är 8 tecken eller mer
+                //    static bool ValidLength(string password)
                 //    {
-                //        max = massaTal[i];
+                //        // Kontrollerar att lösenord är 8 tecken eller mer
+                //        return password.Length >= 8;
+                //    }
+
+                //    // Kontrollerar innehåll av minst ett specialtecken
+                //    static bool CheckSpecial(string password)
+                //    {
+                //        string specialCharacters = "!@#$%^&*()-_=+[{]};:'\"|\\,<.>/?";
+                //        foreach (char c in password)
+                //        {
+                //            if (specialCharacters.Contains(c))
+                //            {
+                //                return true;
+                //            }
+                //        }
+                //        return false;
+                //    }
+
+                //    // Kontrollerar innehåll av minst en versal
+                //    static bool CheckVersal(string password)
+                //    {
+                //        foreach (char c in password)
+                //        {
+                //            if (char.IsUpper(c))
+                //                return true;
+                //        }
+                //        return false;
+                //    }
+
+                //    // Anropar alla  metoder för att validera lösenordet
+                //    bool eightCharacters = ValidLength(userPassword);
+                //    bool oneSpecial = CheckSpecial(userPassword);
+                //    bool oneUpper = CheckVersal(userPassword);
+
+                //    // Skriver ut resultatet av valideringen
+                //    if (eightCharacters && oneSpecial && oneUpper)
+                //    {
+                //        Console.WriteLine("Lösenord OK");
+                //    }
+                //    else
+                //    {
+                //        Console.WriteLine("Lösenord EJ OK");
                 //    }
                 //}
-                //Console.WriteLine(max);
+                //PasswordValidator();
+            }
+            //Uppgift 6 - Skriv ett program som använder en for-loop för att hitta det största talet i en array av heltal.
+            {
+                //static void FindMax()
+                //{
+                //    int[] massaTal = { 1, 5, 48, 5, 3, 6, 9, 3, 25, 4, 85, 28, 8 };
+                //    int max = 0;
+                //    // För varje tal i massaTal, kontrollera om talet är större än max. Om sant, sätt max till det talet.
+                //    for (int i = 0; i < massaTal.Length; i++)
+                //    {
+                //        if (massaTal[i] > max)
+                //        {
+                //            max = massaTal[i];
+                //        }
+                //    }
+                //    Console.WriteLine(max);
+                //}
+                //FindMax();
             }
         }
     }
