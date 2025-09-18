@@ -38,18 +38,22 @@ namespace HemuppgiftLoopar
             }
             //Uppgift 3 - Skriv ett program som skapa en lista med siffror och räknar hur många gånger ett specifikt tal förekommer i listan.
             {
-                //List<int> list = new List<int> { 1, 2, 3, 4, 3, 2, 2, 3, 5, 6, 2, 9, 7, 2, 3, 5, 8, 9, 6, 5, 3, 4, 5, 6 };
-                //Console.WriteLine("Ge mig ett heltal: ");
-                //int userNum = Convert.ToInt32(Console.ReadLine());
-                //int Qty = 0;
-                //foreach (int item in list)
-                //{
-                //    if (item == userNum)
-                //    {
-                //        Qty++;
-                //    }
-                //}
-                //Console.WriteLine($"{userNum} finns {Qty} gånger i listan.");
+                static void ListCount()
+                {
+                    List<int> list = new List<int> { 1, 2, 3, 4, 3, 2, 2, 3, 5, 6, 2, 9, 7, 2, 3, 5, 8, 9, 6, 5, 3, 4, 5, 6 };
+                    Console.WriteLine("Ge mig ett heltal: ");
+                    int userNum = Convert.ToInt32(Console.ReadLine());
+                    int count = 0;
+                    foreach (int num in list)
+                    {
+                        if (num == userNum)
+                        {
+                            count++;
+                        }
+                    }
+                    Console.WriteLine($"\"{userNum}\" finns {count} gånger i listan.");
+                }
+                ListCount();
             }
             //Uppgift 4
             {
