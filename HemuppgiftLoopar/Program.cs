@@ -24,13 +24,17 @@ namespace HemuppgiftLoopar
             }
             //Uppgift 2 - Skriv ett C# program som ber användaren att ange ett heltal och skriver ut multiplikationstabellen för det talet (1-10).
             {
-                //Console.WriteLine("Ge mig ett heltal: ");
-                //int userNum = Convert.ToInt32(Console.ReadLine());
-                //Console.WriteLine();
-                //for (int i = 1; i <= 10; i++)
+                //static void MultiplicationTable()
                 //{
-                //    Console.WriteLine($"{userNum} * {i} = {userNum * i}");
+                //    Console.WriteLine("Ge mig ett heltal: ");
+                //    int usernum = Convert.ToInt32(Console.ReadLine());
+                //    Console.WriteLine();
+                //    for (int i = 1; i <= 10; i++)
+                //    {
+                //        Console.WriteLine($"{usernum} * {i} = {usernum * i}");
+                //    }
                 //}
+                //MultiplicationTable();
             }
             //Uppgift 3 - Skriv ett program som skapa en lista med siffror och räknar hur många gånger ett specifikt tal förekommer i listan.
             {
